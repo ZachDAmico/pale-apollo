@@ -1,21 +1,21 @@
 /* Box Model Hack */
 /* remember this makes browser include padding and border in the calculation of element size so it stays fixed to the size you define */
 * {
-     box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Clear fix hack */
 .clearfix:after {
-     content: ".";
-     display: block;
-     clear: both;
-     visibility: hidden;
-     line-height: 0;
-     height: 0;
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
 }
 
 .clear {
-	clear: both;
+  clear: both;
 }
 
 /******************************************
@@ -23,21 +23,55 @@
 /*******************************************/
 
 body {
-
+  background: rgb(0, 0, 0);
 }
-
 
 /******************************************
 /* LAYOUT
 /*******************************************/
 header {
-
 }
 
 footer {
-
 }
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+
+.logo__container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.name__logo {
+  width: min(90%, 1000px);
+  height: auto;
+  display: block;
+}
+
+.pillar {
+  width: min(90%, 1000px);
+  height: auto;
+  display: block;
+}
+
+.initial__nav__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 2%;
+}
+.instagram__logo {
+  height: 28px;
+  width: auto;
+  display: block;
+  margin: 0 5px;
+}
+
+.email__logo {
+  height: 28px;
+  width: auto;
+  display: block;
+  margin: 0 5px;
+}
