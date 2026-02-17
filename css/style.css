@@ -44,7 +44,6 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* margin: 0 auto; */
 }
 
 /* used this to put vertical line centered in container to see if logos were centered or not to remove initial space to the right side */
