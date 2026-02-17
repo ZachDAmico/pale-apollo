@@ -40,8 +40,11 @@ footer {
 /*******************************************/
 
 .logo__container {
-  max-width: 1000px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* margin: 0 auto; */
 }
 
 .name__logo {
@@ -74,4 +77,18 @@ footer {
   width: auto;
   display: block;
   margin: 0 5px;
+}
+
+.musicPlayer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.track {
+  color: white;
+}
+
+.albumArt {
+  max-width: 15%;
 }
