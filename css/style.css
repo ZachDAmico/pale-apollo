@@ -47,16 +47,30 @@ footer {
   /* margin: 0 auto; */
 }
 
+/* used this to put vertical line centered in container to see if logos were centered or not to remove initial space to the right side */
+/* .logo__container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: red;
+  pointer-events: none;
+} */
+
 .name__logo {
   width: min(90%, 1000px);
   height: auto;
   display: block;
+  margin: 0 auto;
 }
 
 .pillar {
   width: min(90%, 1000px);
   height: auto;
   display: block;
+  margin: 0 auto;
 }
 
 .initial__nav__list {
