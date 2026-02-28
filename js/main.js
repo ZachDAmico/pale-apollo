@@ -16,9 +16,13 @@ const trackList = [
 ];
 
 // don't need to pass trackList as parameter because I am not calling playTracks manually, the browser is calling it via the eventlistener click on the playbutton
+// as in, i am not calling playTracks(argument), the browser is calling playTracks(clickEvent)
 const playTracks = () => {
-  console.log("play button clicked");
-  console.log(trackList[trackListIndex]);
+  // in order to access the objects within the trackList array, you have to target them explicitly which [trackListIndex] is doing
+  // trackList.name will be undefined because there is no name property for the entire trackList array.
+  // [trackListIndex] is dynamically rendering the current position within the trackList array - vs hardcoding [0] or [1]
+  console.log(trackList[trackListIndex].name);
+  trackNameDisplay.innerText = trackList[trackListIndex].name;
 };
 
 // Arrow functions are not hoisted like function declarations,
