@@ -223,6 +223,7 @@ footer {
 .trackName {
   color: rgb(255, 255, 255);
   max-width: 20%;
+  min-height: 27.6px;
 }
 
 .nowPlayingTrackListContainer {
