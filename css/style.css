@@ -200,9 +200,9 @@ footer {
   align-items: center;
   margin: 1.5rem 0;
 }
-.rewindButton,
+.previousButton,
 .playButton,
-.fastForwardButton {
+.nextButton {
   height: 2.5rem;
   width: 2.5rem;
   background: rgba(0, 0, 0, 0);
@@ -213,9 +213,9 @@ footer {
   stroke: currentColor;
 }
 
-.rewindButton:hover svg,
+.previousButton:hover svg,
 .playButton:hover svg,
-.fastForwardButton:hover svg {
+.nextButton:hover svg {
   stroke-width: 2.5;
   height: 2rem;
 }

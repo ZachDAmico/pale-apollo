@@ -1,8 +1,9 @@
 // variables making connections to DOM elements should go before function that will be using those connections
 const musicPlayer = document.querySelector(".musicPlayer");
 const trackNameDisplay = document.querySelector(".trackName");
-const playTrackOrder = document.querySelector("#audioPlayer");
+const playTrack = document.querySelector("#audioPlayer");
 const playPauseSwitch = document.querySelector(".playButton");
+// const nextSong = document.querySelector(".nextButton");
 
 let trackListIndex = 0;
 
@@ -27,17 +28,17 @@ const playTracks = () => {
   console.log(trackList[trackListIndex].name);
   trackNameDisplay.innerText = trackList[trackListIndex].name;
 
-  // this was originally playTrackOrder.src = trackList[trackListIndex].file;
+  // this was originally playTrack.src = trackList[trackListIndex].file;
   // which continuously reset the src state, which always set the .paused to be true
   // so clicking the play button would always play despite the if else statement.
   // best way to debug would be to run this to see status
-  // console.log("before src, paused =", playTrackOrder.paused);
-  // playTrackOrder.src = trackList[trackListIndex].file;
-  // console.log("after src, paused =", playTrackOrder.paused);
-  if (!playTrackOrder.src) playTrackOrder.src = trackList[trackListIndex].file;
+  // console.log("before src, paused =", playTrack.paused);
+  // playTrack.src = trackList[trackListIndex].file;
+  // console.log("after src, paused =", playTrack.paused);
+  if (!playTrack.src) playTrack.src = trackList[trackListIndex].file;
 
-  if (playTrackOrder.paused) {
-    playTrackOrder.play();
+  if (playTrack.paused) {
+    playTrack.play();
     playPauseSwitch.innerHTML = `
 <svg xmlns="http://www.w3.org/2000/svg"
      fill="none"
@@ -51,7 +52,7 @@ const playTracks = () => {
 </svg>
 `;
   } else {
-    playTrackOrder.pause();
+    playTrack.pause();
     playPauseSwitch.innerHTML = `
 <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -66,11 +67,40 @@ const playTracks = () => {
                     </svg>
 `;
   }
-  console.log(playTrackOrder.paused);
 };
 
+const nextSong = () => {
+  // this console.log is checking what the index is before clicking
+  // console.log("before:", trackListIndex);
+
+  trackListIndex++;
+  // this console.log is checking to make sure increment is only 1
+  // console.log("after:", trackListIndex);
+  if (trackListIndex >= trackList.length) {
+    trackListIndex = 0;
+  }
+  console.log(trackListIndex);
+
+  trackNameDisplay.innerText = trackList[trackListIndex].name;
+  playTrack.src = trackList[trackListIndex].file;
+  playTrack.play();
+  // no if statement needed, set the icon after calling play() because the track will now be playing, so the button should display the pause icon
+  playPauseSwitch.innerHTML = `
+  <svg xmlns="http://www.w3.org/2000/svg"
+     fill="none"
+     viewBox="0 0 24 24"
+     stroke-width="1.5"
+     stroke="currentColor"
+     class="size-6">
+  <path stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+</svg>
+`;
+};
 // Arrow functions are not hoisted like function declarations,
 // so event listeners that reference them should be added after the function exists
 // Function declarations (function name(){}) ARE hoisted, which is why older examples
 // sometimes attach listeners before the function appears in the file
 document.querySelector(".playButton").addEventListener("click", playTracks);
+document.querySelector(".nextButton").addEventListener("click", nextSong);
