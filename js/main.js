@@ -3,7 +3,6 @@ const musicPlayer = document.querySelector(".musicPlayer");
 const trackNameDisplay = document.querySelector(".trackName");
 const playTrack = document.querySelector("#audioPlayer");
 const playPauseSwitch = document.querySelector(".playButton");
-// const nextSong = document.querySelector(".nextButton");
 
 let trackListIndex = 0;
 
@@ -98,9 +97,39 @@ const nextSong = () => {
 </svg>
 `;
 };
+
+const previousSong = () => {
+  trackListIndex--;
+
+  if (trackListIndex < 0) {
+    trackListIndex = trackList.length - 1;
+  }
+  console.log(trackListIndex);
+  playTrack.src = trackList[trackListIndex].file;
+  playTrack.play();
+
+  trackNameDisplay.innerText = trackList[trackListIndex].name;
+
+  playPauseSwitch.innerHTML = `
+  <svg xmlns="http://www.w3.org/2000/svg"
+     fill="none"
+     viewBox="0 0 24 24"
+     stroke-width="1.5"
+     stroke="currentColor"
+     class="size-6">
+  <path stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+</svg>
+`;
+};
+
 // Arrow functions are not hoisted like function declarations,
 // so event listeners that reference them should be added after the function exists
 // Function declarations (function name(){}) ARE hoisted, which is why older examples
 // sometimes attach listeners before the function appears in the file
 document.querySelector(".playButton").addEventListener("click", playTracks);
 document.querySelector(".nextButton").addEventListener("click", nextSong);
+document
+  .querySelector(".previousButton")
+  .addEventListener("click", previousSong);
