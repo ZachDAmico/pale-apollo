@@ -1,5 +1,6 @@
 Pale Apollo
-Nashville Industrial Noise Rock
+
+- Nashville Industrial Noise Rock -
 Official website for Pale Apollo — a custom-built music player and band hub. Live at paleapolloband.com.
 
 ---Features---
