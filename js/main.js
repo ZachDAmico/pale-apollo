@@ -13,7 +13,7 @@ const trackList = [
   },
   {
     name: "Cope",
-    file: "/media/severed.wav",
+    file: "/media/Cope.wav",
   },
 ];
 
