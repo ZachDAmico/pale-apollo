@@ -7,7 +7,7 @@ Live at paleapolloband.com.
 
  Custom HTML/CSS/JS audio player with playback controls
  Direct links to Instagram and email contact
- Fully responsive design with fluid typography via CSS clamp()
+ Fully responsive design
 
  ---Tech Stack---
 
